@@ -19,6 +19,12 @@ class Box{
     if(b2.x <= 100){
       b2.x = 100; 
     }
+    if(rate > 10000){
+      x += velocity * rate / 100; 
+    }
+    if(rate == 10000000){
+      x += 100000000; 
+    }
   }
   
   void checkCollision(){
