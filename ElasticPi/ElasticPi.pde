@@ -18,8 +18,12 @@ void draw(){
    b1.nextPos();
    b2.nextPos();
  }
- if(b2.velocity > 0 && Math.abs(b1.velocity) < b2.velocity){
-   
+ if(b2.velocity > 0 && b1.velocity > 0 && b1.velocity < b2.velocity){
+   done = true;
+ }
+ if(done){
+   fill(0,255,0);
+   rect(500,800,50,50);
  }
 }
 
@@ -36,9 +40,9 @@ void drawEnv(){
   text(Long.toString(collisions), 100, 100);
   text("PI", 30,120);
   text("3.14159265358979323", 100, 120);
-  text("Speed Box 1", 30, 900);
+  text("Velocity Box 1", 30, 900);
   text(Double.toString(b1.velocity), 120, 900);
-  text("Speed Box 2", 30, 920);
+  text("Velocity Box 2", 30, 920);
   text(Double.toString(b2.velocity), 120, 920);
   text("Calculation Rate", 800, 100);
   text(Long.toString(rate), 900,100);
